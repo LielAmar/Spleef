@@ -1,0 +1,10 @@
+1:
+    world: World
+    x: 0
+    y: 0
+    z: 0
+    spawn:
+        world: World
+        x: 10
+        y: 10
+        z: 10

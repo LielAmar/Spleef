@@ -1,0 +1,29 @@
+# ==============================================
+# Thank you for using Spleef by Liel Amar
+# For any support:
+# - Discord: Liel Amar#4531
+# - Hypixel IGN: LielAmar
+# ==============================================
+
+# Schematic to load the maps from
+Schematic: "map.schematic"
+
+# The maximum amount of players in a single game & minimum amount of players in order for a game to start
+MaxPlayersInGame: 24
+MinimumPlayersInGame: 8
+
+# The maximum distance (in blocks) players can get away from the spawn location of a spleef map
+MaxDistanceFromMap: 50
+
+# How long will the countdown last when there are enough players (Seconds)
+CountdownTime: 30
+
+# How long will a game last before force-ending (Seconds)
+GameTime: 300
+
+# How long will the winning last right after winner is announced (before teleporting all players to spawn) (Seconds)
+WinTime: 10
+
+
+# The item players will get when spleef starts!
+SpleefItem: "DIAMOND_SPADE"

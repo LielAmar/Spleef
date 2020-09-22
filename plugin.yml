@@ -1,0 +1,45 @@
+name: Spleef
+main: net.lielamar.spleef.Main
+description: A simple spleef plugin
+author: Liel Amar
+version: 1.0
+
+commands:
+    spleef:
+        description: Main spleef command. Go and play!
+
+permissions:
+    spleef.command.*:
+        description: Permissions to all of the /spleef sub commands
+        default: false
+        children:
+            spleef.commandlist: true
+            spleef.command.join: true
+            spleef.command.quit: true
+            spleef.command.forcestart: true
+            spleef.command.spectate: true
+            spleef.command.map.list: true
+            spleef.command.map.create: true
+            spleef.command.map.remove: true
+            spleef.command.map.setminy: true
+            spleef.command.map.setspawn: true
+            spleef.command.map.setlocation: true
+    spleef.player:
+         description: Permissions to all of the /spleef sub commands necessary for a player
+         default: false
+         children:
+             spleef.commandlist: true
+             spleef.command.join: true
+             spleef.command.quit: true
+    spleef.admin:
+         description: Permissions to all of the /spleef sub commands necessary for an admin
+         default: false
+         children:
+             spleef.command.forcestart: true
+             spleef.command.spectate: true
+             spleef.command.map.list: true
+             spleef.command.map.create: true
+             spleef.command.map.remove: true
+             spleef.command.map.setminy: true
+             spleef.command.map.setspawn: true
+             spleef.command.map.setlocation: true
