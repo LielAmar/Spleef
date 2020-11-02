@@ -4,10 +4,30 @@ import net.lielamar.spleef.Main;
 
 public class GlobalVariables {
 
-	public static final int MAX_PLAYERS_IN_GAME = Main.getInstance().getConfig().getInt("MaxPlayersInGame"); // Maximum players in a single game (map)
-	public static final int MIN_PLAYERS_IN_GAME = Main.getInstance().getConfig().getInt("MinimumPlayersInGame"); // Minimum players in order for a game to start counting down
-	public static final int COUNTDOWN_TIME = Main.getInstance().getConfig().getInt("CountdownTime"); // Countdown time in seconds
-	public static final int GAME_TIME = Main.getInstance().getConfig().getInt("GameTime"); // Game time in seconds
-	public static final int WIN_TIME = Main.getInstance().getConfig().getInt("WinTime"); // Win time in seconds
-	public static final int MAX_DISTANCE_FROM_MAP = Main.getInstance().getConfig().getInt("MaxDistanceFromMap"); // Max distance from the maps' spawn
+	public static int MAX_PLAYERS_IN_GAME = 24;
+	public static int MIN_PLAYERS_IN_GAME = 8;
+	public static int COUNTDOWN_TIME = 30;
+	public static int GAME_TIME = 300;
+	public static int WIN_TIME = 10;
+	public static int MAX_DISTANCE_FROM_MAP = 50;
+
+	public GlobalVariables() {
+		if(Main.getInstance().getConfig().contains("MaxPlayersInGame"))
+			MAX_PLAYERS_IN_GAME = Main.getInstance().getConfig().getInt("MaxPlayersInGame");
+		
+		if(Main.getInstance().getConfig().contains("MinimumPlayersInGame"))
+			MIN_PLAYERS_IN_GAME = Main.getInstance().getConfig().getInt("MinimumPlayersInGame");
+		
+		if(Main.getInstance().getConfig().contains("CountdownTime"))
+			COUNTDOWN_TIME = Main.getInstance().getConfig().getInt("CountdownTime");
+		
+		if(Main.getInstance().getConfig().contains("GameTime"))
+			GAME_TIME = Main.getInstance().getConfig().getInt("GameTime");
+		
+		if(Main.getInstance().getConfig().contains("WinTime"))
+			WIN_TIME = Main.getInstance().getConfig().getInt("WinTime");
+		
+		if(Main.getInstance().getConfig().contains("MaxDistanceFromMap"))
+			MAX_DISTANCE_FROM_MAP = Main.getInstance().getConfig().getInt("MaxDistanceFromMap");
+	}
 }

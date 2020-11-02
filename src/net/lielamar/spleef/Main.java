@@ -21,6 +21,7 @@ import net.lielamar.spleef.listeners.SnowMeltEvent;
 import net.lielamar.spleef.listeners.StatusEvents;
 import net.lielamar.spleef.managers.GameManager;
 import net.lielamar.spleef.managers.StorageManager;
+import net.lielamar.spleef.utils.GlobalVariables;
 import net.lielamar.spleef.utils.SpleefPlayerUtils;
 
 public class Main extends JavaPlugin {
@@ -71,6 +72,8 @@ public class Main extends JavaPlugin {
 	}
 	
 	public void setupManagers() {
+		new GlobalVariables(); // Loading critical variables for the game
+		
 		GameManager.getInstance();
 		StorageManager.getInstance();
 	}
