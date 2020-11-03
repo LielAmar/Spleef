@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.bukkit.entity.Player;
 
-import net.lielamar.spleef.utils.GlobalVariables;
+import net.lielamar.spleef.Main;
 
 public class Game {
 	
@@ -19,7 +19,7 @@ public class Game {
 	private GameSteps gs;
 	
 	public Game(GameMap map) {
-		this.players = new Player[GlobalVariables.MAX_PLAYERS_IN_GAME];
+		this.players = new Player[Main.getVars().getMaxPlayersInGame()];
 		this.spectators = new LinkedList<Player>();
 		this.map = map;
 		

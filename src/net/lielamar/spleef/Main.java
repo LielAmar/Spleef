@@ -28,6 +28,8 @@ public class Main extends JavaPlugin {
 
 	private static Main instance;
 	
+	private static GlobalVariables vars;
+	
 	@Override
 	public void onEnable() {
 		super.onEnable();
@@ -72,13 +74,14 @@ public class Main extends JavaPlugin {
 	}
 	
 	public void setupManagers() {
-		new GlobalVariables(); // Loading critical variables for the game
+		vars = new GlobalVariables(); // Loading critical variables for the game
 		
 		GameManager.getInstance();
 		StorageManager.getInstance();
 	}
 	
 	public static Main getInstance() { return instance; }
+	public static GlobalVariables getVars() { return vars; }
 
 	public WorldEditPlugin getWE() {
 		Plugin p = Bukkit.getPluginManager().getPlugin("WorldEdit");

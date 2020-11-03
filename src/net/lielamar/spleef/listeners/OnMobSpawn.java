@@ -8,9 +8,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.entity.ItemSpawnEvent;
 
+import net.lielamar.spleef.Main;
 import net.lielamar.spleef.managers.GameManager;
 import net.lielamar.spleef.moduels.GameMap;
-import net.lielamar.spleef.utils.GlobalVariables;
 
 public class OnMobSpawn implements Listener {
 
@@ -18,7 +18,7 @@ public class OnMobSpawn implements Listener {
 	public void mobSpawn(EntitySpawnEvent e) {
 		if(e.getEntity() instanceof LivingEntity) {
 			for(GameMap map : GameManager.getInstance().getMaps()) {
-				if(e.getLocation().distance(map.getSpawn()) < GlobalVariables.MAX_DISTANCE_FROM_MAP) {
+				if(e.getLocation().distance(map.getSpawn()) < Main.getVars().getMaxDistanceFromMap()) {
 					e.setCancelled(true);
 					e.getEntity().remove();
 				}
@@ -30,7 +30,7 @@ public class OnMobSpawn implements Listener {
 	public void itemSpawn(ItemSpawnEvent e) {
 		if(e.getEntity().getType() == EntityType.SNOWBALL || e.getEntity().getItemStack().getType() == Material.SNOWBALL) {
 			for(GameMap map : GameManager.getInstance().getMaps()) {
-				if(e.getLocation().distance(map.getSpawn()) < GlobalVariables.MAX_DISTANCE_FROM_MAP) {
+				if(e.getLocation().distance(map.getSpawn()) < Main.getVars().getMaxDistanceFromMap()) {
 					e.getEntity().remove();
 				}
 			}

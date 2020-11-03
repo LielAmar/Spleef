@@ -129,11 +129,11 @@ public class Messages {
 	}
 	
 	public String playerJoinedTheGame(Player p, int amount) {
-		return getFixed("playerJoinedTheGame", p, null, null, amount, GlobalVariables.MAX_PLAYERS_IN_GAME, -1);
+		return getFixed("playerJoinedTheGame", p, null, null, amount, Main.getVars().getMaxPlayersInGame(), -1);
 	}
 	
 	public String playerLeftTheGame(Player p, int amount) {
-		return getFixed("playerLeftTheGame", p, null, null, amount, GlobalVariables.MAX_PLAYERS_IN_GAME, -1);
+		return getFixed("playerLeftTheGame", p, null, null, amount, Main.getVars().getMaxPlayersInGame(), -1);
 	}
 	
 	public String playerLostTheGame(Player p, int left) {

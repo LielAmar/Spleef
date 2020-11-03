@@ -9,7 +9,6 @@ import net.lielamar.spleef.listeners.custom.GameEndEvent;
 import net.lielamar.spleef.listeners.custom.GameStartEvent;
 import net.lielamar.spleef.listeners.custom.PlayerWinEvent;
 import net.lielamar.spleef.managers.GameManager;
-import net.lielamar.spleef.utils.GlobalVariables;
 import net.lielamar.spleef.utils.Messages;
 import net.lielamar.spleef.utils.SpleefPlayerUtils;
 
@@ -171,13 +170,13 @@ public class GameSteps {
 	}
 	
 	public void tryToStartCountdown() {
-		if(getPlayersInGame() >= GlobalVariables.MIN_PLAYERS_IN_GAME) {
+		if(getPlayersInGame() >= Main.getVars().getMinPlayersInGame()) {
 			startCountdown();
 		}
 	}
 
 	public void tryToStopCountdown() {
-		if(getPlayersInGame() < GlobalVariables.MIN_PLAYERS_IN_GAME) {
+		if(getPlayersInGame() < Main.getVars().getMinPlayersInGame()) {
 			stopCountdown();
 		}
 	}
@@ -188,7 +187,7 @@ public class GameSteps {
 			final Game myGame = this.game;
 			this.game.setStartedCountdown(true);
             GameManager.getInstance().getThreads().put(this.game, Bukkit.getServer().getScheduler().runTaskTimer(Main.getInstance(), new Runnable() {
-    			int i = GlobalVariables.COUNTDOWN_TIME+1;
+    			int i = Main.getVars().getCountdownTime()+1;
 
                 @Override
                 public void run() {
@@ -251,7 +250,7 @@ public class GameSteps {
 			public void run() {
 				endGame();
 			}
-		}, GlobalVariables.WIN_TIME*20);
+		}, Main.getVars().getWinTime()*20);
 	}
 
 	public void endGame() {

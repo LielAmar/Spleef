@@ -10,7 +10,6 @@ import org.bukkit.inventory.ItemStack;
 import net.lielamar.spleef.Main;
 import net.lielamar.spleef.listeners.custom.GameStartEvent;
 import net.lielamar.spleef.managers.GameManager;
-import net.lielamar.spleef.utils.GlobalVariables;
 import net.lielamar.spleef.utils.Messages;
 import net.md_5.bungee.api.ChatColor;
 
@@ -32,7 +31,7 @@ public class OnGameStarts implements Listener {
 		}
 
         GameManager.getInstance().getThreads().put(e.getGame(), Bukkit.getServer().getScheduler().runTaskTimer(Main.getInstance(), new Runnable() {
-			int i = GlobalVariables.GAME_TIME+1;
+			int i = Main.getVars().getGameTime()+1;
 
             @Override
             public void run() {

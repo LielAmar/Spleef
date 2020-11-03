@@ -12,10 +12,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitTask;
 
+import net.lielamar.spleef.Main;
 import net.lielamar.spleef.moduels.Game;
 import net.lielamar.spleef.moduels.GameMap;
 import net.lielamar.spleef.moduels.LoseReason;
-import net.lielamar.spleef.utils.GlobalVariables;
 import net.lielamar.spleef.utils.Messages;
 
 public class GameManager {
@@ -155,7 +155,7 @@ public class GameManager {
 	public void reloadGame(Game game) {
 		game.getMap().loadMap();
 
-		game.setPlayers(new Player[GlobalVariables.MAX_PLAYERS_IN_GAME]);
+		game.setPlayers(new Player[Main.getVars().getMaxPlayersInGame()]);
 		game.setSpectators(new LinkedList<Player>());
 		
 		game.setStartedCountdown(false);

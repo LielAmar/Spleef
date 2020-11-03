@@ -6,10 +6,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
+import net.lielamar.spleef.Main;
 import net.lielamar.spleef.managers.GameManager;
 import net.lielamar.spleef.moduels.Game;
 import net.lielamar.spleef.moduels.LoseReason;
-import net.lielamar.spleef.utils.GlobalVariables;
 
 public class DistanceEvents implements Listener {
 
@@ -34,7 +34,7 @@ public class DistanceEvents implements Listener {
 		Location map = game.getMap().getSpawn();
 		Location player = p.getLocation();
 		
-		if(player.distance(map) > GlobalVariables.MAX_DISTANCE_FROM_MAP) {
+		if(player.distance(map) > Main.getVars().getMaxDistanceFromMap()) {
 			e.setCancelled(true);
 			e.setTo(e.getFrom());
 			
